@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# destroy all dans le bon ordre
+# créer les user
+# créer les offers
+
+offer = Offer.create!(title: "Hello World", address: "Paris", user_id:1)
