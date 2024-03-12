@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+.container {
+  background-color: #F99A85;
+  border-radius: 20px;
+  width: 150vh;
+  height: 400px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+}
+
+.text h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.text p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.text {
+  width: 50vh;
+  text-align: center;
+  align-self: center;
+  padding: 0 10px;
+}
+
+.row {
+  width: 50vh;
+}
+
+.form {
+  background-color: #FAF6F0;
+  border-radius: 20px;
+  margin-left: 10px;
+}
