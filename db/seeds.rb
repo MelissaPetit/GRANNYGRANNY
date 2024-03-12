@@ -9,7 +9,58 @@
 #   end
 
 # destroy all dans le bon ordre
-# créer les user
-# créer les offers
 
-offer = Offer.create!(title: "Hello World", address: "Paris", user_id:1)
+Offer.destroy_all
+User.destroy_all
+
+# Exemple 1
+user1 = User.create!(first_name: "Francine", last_name: "Duchamp", phone_number:"+33749710103", password: "123456", email: "user1@grandma.com")
+offer1 = Offer.create!(title: "Apprends le crawl avec mamy",
+                       description:"Prends le temps de faire quelques longueurs avec moi et je te donnerai tous mes secrets",
+                       start_from: "", 
+                       price_per_participant:"25", 
+                       photo_url:"", 
+                       capacity: "2", 
+                       duration:"3", 
+                       category: "Natation", 
+                       address: "Paris", 
+                       user_id: user1.id)
+
+user2 = User.create!(first_name: "Thérèse", last_name: "Dupont", phone_number:"+33749710103", password: "123456", email: "user2@grandma.com")
+offer2 = Offer.create!(title: "Viens faire du wheeling avec Thérèse", 
+                       description:"Viens tester les lois de la gravité sur mon deux roues", 
+                       start_from: "",
+                       price_per_participant:"25",
+                       photo_url:"", 
+                       capacity: "3", 
+                       duration:"2", 
+                       category: "Sport extrême", 
+                       address: "Toulouse", 
+                       user_id: user2.id
+                    )
+
+user3 = User.create!(first_name: "Marie", last_name: "Jeanne", phone_number:"+33749710103", password: "123456", email: "user3@grandma.com")
+offer3 = Offer.create!(title: "Viens déguster les meilleurs recettes de mamy", 
+                       description:"As-tu déjà gouté des space cake au CBD ? Mamy réalise les meilleurs de France.", 
+                       start_from: "",
+                       price_per_participant:"100",
+                       photo_url:"", 
+                       capacity: "5", 
+                       duration:"5", 
+                       category: "Cuisine", 
+                       address: "Marseille", 
+                       user_id: user3.id
+                    )
+
+user4 = User.create!(first_name: "Louise", last_name: "Couteau", phone_number:"+33749710103", password: "123456", email: "user4@grandma.com")
+offer4 = Offer.create!(title: "Lancer de couteaux", 
+                        description:"Ma cuisine regorge de couteaux bien aiguisés et prêts à être lancés. Rejoins-moi pour cette super aventure !", 
+                        start_from: "",
+                        price_per_participant:"50",
+                        photo_url:"", 
+                        capacity: "1", 
+                        duration:"3", 
+                        category: "Sport extrême", 
+                        address: "Bordeaux", 
+                        user_id: user4.id
+                    )
