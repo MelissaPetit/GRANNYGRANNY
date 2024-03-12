@@ -31,4 +31,13 @@
   margin-left: 10px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 20px;
+}
 
+.bottom {
+  padding: 30px;
+  text-align: center;
+}
