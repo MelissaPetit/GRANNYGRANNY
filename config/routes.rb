@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :offers, only: [:index]
+  get '/uikit', to: 'pages#uikit'
+  get '/test', to: 'pages#test'
 
 end

@@ -3,5 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
-  
+
+  def uikit
+  end
+
+  def test
+  end
+
 end
