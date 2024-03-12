@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :offers, only: [:index]
   get '/uikit', to: 'pages#uikit'
-  get '/test', to: 'pages#test'
 
 end
