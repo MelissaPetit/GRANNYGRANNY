@@ -6,4 +6,8 @@ class OffersController < ApplicationController
             @offers = @offers.where("title ILIKE ?", "%#{params[:query]}%")
         end
     end
+
+    def show
+        @offer = Offer.find(params[:id])
+    end
 end

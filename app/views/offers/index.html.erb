@@ -5,12 +5,9 @@
                 <div class="card-body">
                     <h5 class="card-title"><%= offer.title %></h5>
                     <p class="card-text"><%= offer.description %></p>
-                    <a href="#" class="btn btn-primary">Book experience</a>
-                </div>
-                </div>
+                    <button type="button" class="btn btn-primary text-white"><%= link_to "Book experience", offer_path(offer) %></button>
+               </div>
+               </div>
         <% end %>
     </div>
-
-
-
 

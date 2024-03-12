@@ -1,0 +1,23 @@
+<div class="container">
+    <h1><%= @offer.title %></h1>
+    <h3><%= @offer.category %></h3>
+    <div>
+        <%= image_tag (@offer.photo_url), class: "rounded-4" %>
+    </div>
+    <div>
+        <div>
+            <h3>Description :</h3>
+            <p><%= @offer.description %></p>
+        </div>
+        <div>
+            <h3>Capacity : <%= @offer.capacity %> persons</h3>
+        </div>
+        <div>
+            <h3>Duration : <%= @offer.duration.to_i%> h</h3>
+        </div>
+        <div>
+            <h3>Address : <%= @offer.address %></h3>
+        </div>
+    </div>
+</div>
+
