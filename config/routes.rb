@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # user story d'un utilisateur lambda (futur grand-mère ou futur client):
-  authenticate :user do
-    resources :users, only: [:edit, :update] do
-      resources :offers, only: [:index, :new, :create] do
-        resources :bookings, only: [:new, :create]
-      end
-    end
+  resources :offers, only: [:index, :show, :new, :create] do
+    resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:index]
 
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -19,15 +15,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
-  # 'visitor' story d'un visiteur:
-  resources :offers, only: [:index, :show]
+  # resources :offers, only: [:index]
+  get '/uikit', to: 'pages#uikit'
 
   # user story d'une grand-mère:
   namespace :grandma do
-    resources :offers, only: [:new, :create] do
-      resources :bookings, only: [:new, :create]
-    end
     resources :bookings, only: [:index] do
       member do
         patch :accept
