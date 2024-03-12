@@ -7,7 +7,4 @@ class PagesController < ApplicationController
   def uikit
   end
 
-  def test
-  end
-
 end
