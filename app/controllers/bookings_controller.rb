@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   # as a user I can see my bookings (particularly a client)
   def index
     # Lister toutes les réservations, et les récupérer dans l'instance @bookings
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def destroy
