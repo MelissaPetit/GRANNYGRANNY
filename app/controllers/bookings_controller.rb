@@ -8,6 +8,20 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
+  def create
+    @offer = Offer.find(params[:offer_id])
+    @booking = Booking.new(booking_params)
+    @booking.offer = @offer
+    @booking.user = current_user
+    @total_price = @booking.participant_number * @offer.price_per_participant
+    @booking.total_price = @total_price
+    if @booking.save
+        redirect_to bookings_path
+    else
+        render "offers/show", status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     # si l'id de réservation correspond à l'utilisateur en cours ...
@@ -24,7 +38,8 @@ class BookingsController < ApplicationController
 
   def booking_params
     # seuls les :id de booking sont autorisés lors de la suppression.
-    params.require(:booking).permit(:id)
+    params.require(:booking).permit(:date, :participant_number, :comment)
+
   end
 
   def set_booking
@@ -32,3 +47,5 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 end
+
+      
