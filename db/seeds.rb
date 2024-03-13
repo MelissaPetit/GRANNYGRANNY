@@ -38,7 +38,7 @@ offer2 = Offer.create!(title: "Viens faire du wheeling avec Thérèse",
                        user_id: user2.id)
 
 user3 = User.create!(first_name: "Marie", last_name: "Jeanne", phone_number:"+33749710103", password: "123456", email: "user3@grandma.com")
-offer3 = Offer.create!(title: "Viens déguster les meilleurs recettes de mamy",
+offer3 = Offer.create!(title: "Viens déguster les meilleures recettes de mamy",
                        description:"As-tu déjà gouté des space cake au CBD ? Mamy réalise les meilleurs de France.",
                        start_from: Date.today,
                        price_per_participant:"100",
