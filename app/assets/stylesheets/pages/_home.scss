@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
-.container {
+.banner {
   background-color: #F99A85;
   border-radius: 20px;
-  width: 100%;
+  width: 85%;
   height: 400px;
   margin: auto;
   padding: 30px;
@@ -34,10 +34,35 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: 20px;
+  justify-items: center;
 }
 
 .bottom {
-  padding: 30px;
+  width: 85%;
+  padding: 0 30px;
   text-align: center;
+  margin: auto;
+}
+
+.bottom h1 {
+  margin: 40px;
+}
+
+.category-card {
+  overflow: hidden;
+  background: #FAF6F0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 0;
+  width: 200px;
+}
+
+.category-card p {
+  padding: 20px;
+  margin: 0;
+}
+
+.img-category {
+  height: 200px;
+  width: 200px;
 }
