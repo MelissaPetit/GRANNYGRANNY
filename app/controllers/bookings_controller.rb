@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
   def index
     # Lister toutes les réservations, et les récupérer dans l'instance @bookings
     @bookings = Booking.where(user: current_user)
+    @upcoming_bookings = @bookings.where('date > ?', DateTime.now)
+    @past_bookings = @bookings.where('date <= ?', DateTime.now)
   end
 
   def create
