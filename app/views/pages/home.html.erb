@@ -19,31 +19,31 @@
 </div>
 </div>
 <div class="bottom">
-  <h1>Découvrez les expèriences proposées</h1>
-<div class= grid>
-    <div class="category-card">
-      <%= image_tag "Cuisine.png", class: "img-category"%>
-      <div class="category">
-      <p>CUISINE</p>
-      </div>
-    </div>
-        <div class="category-card">
-      <%= image_tag "Peinture.png", class: "img-category"%>
-      <div class="category">
-      <p>PEINTURE</p>
-      </div>
-    </div>
-        <div class="category-card">
-      <%= image_tag("Couture.png", class: "img-category")%>
-      <div class="category">
-      <p>COUTURE</p>
-      </div>
-    </div>
-        <div class="category-card">
+  <h2>Découvrez les expériences proposées actuellement</h2>
+  <div class= grid>
+    <%= link_to offers_path(category: 'Sport'), class: "category-card" do %>
       <%= image_tag "Insolite.png", class: "img-category"%>
       <div class="category">
-      <p>INSOLITE</p>
+        <p>Sport</p>
       </div>
-    </div>
-</div>
+    <% end %>
+    <%= link_to offers_path(category: 'Insolite'), class: "category-card" do %>
+      <%= image_tag "Insolite.png", class: "img-category"%>
+      <div class="category">
+        <p>Insolite</p>
+      </div>
+    <% end %>
+    <%= link_to offers_path(category: 'Tradition'), class: "category-card" do %>
+      <%= image_tag("Insolite.png", class: "img-category")%>
+      <div class="category">
+        <p>Tradition</p>
+      </div>
+    <% end %>
+    <%= link_to offers_path(category: 'Cuisine'), class: "category-card" do %>
+      <%= image_tag "Cuisine.png", class: "img-category"%>
+      <div class="category">
+        <p>Cuisine</p>
+      </div>
+    <% end %>
+  </div>
 </div>

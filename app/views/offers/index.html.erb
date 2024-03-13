@@ -1,13 +1,13 @@
-    <div class="container d-flex">
-        <% @offers.each do |offer| %>
-                <div class="card me-5" style="width: 18rem;">
-                <img src="<%= offer.photo_url%>" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><%= offer.title %></h5>
-                    <p class="card-text"><%= offer.description %></p>
-                    <button type="button" class="btn btn-primary text-white"><%= link_to "Book experience", offer_path(offer) %></button>
-               </div>
-               </div>
-        <% end %>
-    </div>
+<div class="container d-flex">
+    <% @offers.each do |offer| %>
+            <div class="card me-5" style="width: 18rem;">
+            <img src="<%= offer.photo_url%>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= offer.title %></h5>
+                <p class="card-text"><%= offer.description %></p>
+                <button type="button" class="btn btn-primary text-white"><%= link_to "Book experience", offer_path(offer) %></button>
+            </div>
+            </div>
+    <% end %>
+</div>
 
