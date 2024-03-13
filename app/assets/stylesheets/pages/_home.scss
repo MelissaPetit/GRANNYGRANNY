@@ -1,21 +1,20 @@
 // Specific CSS for your home-page
-.container {
+.banner {
   background-color: #F99A85;
   border-radius: 20px;
-  width: 150vh;
+  width: 85%;
   height: 400px;
   margin: auto;
   padding: 30px;
   display: flex;
+  justify-content: space-around;
 }
 
 .text h1 {
-  font-size: 32px;
   font-weight: 600;
 }
 
 .text p {
-  font-size: 16px;
   font-weight: 300;
 }
 
@@ -23,15 +22,47 @@
   width: 50vh;
   text-align: center;
   align-self: center;
-  padding: 0 10px;
-}
-
-.row {
-  width: 50vh;
 }
 
 .form {
+  width: 50vh;
   background-color: #FAF6F0;
   border-radius: 20px;
   margin-left: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.bottom {
+  width: 85%;
+  padding: 0 30px;
+  text-align: center;
+  margin: auto;
+}
+
+.bottom h1 {
+  margin: 40px;
+}
+
+.category-card {
+  overflow: hidden;
+  background: #FAF6F0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 0;
+  width: 200px;
+}
+
+.category-card p {
+  padding: 20px;
+  margin: 0;
+}
+
+.img-category {
+  height: 200px;
+  width: 200px;
 }
