@@ -1,13 +1,21 @@
-<div class="container d-flex">
-    <% @offers.each do |offer| %>
-            <div class="card me-5" style="width: 18rem;">
-            <img src="<%= offer.photo_url%>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><%= offer.title %></h5>
-                <p class="card-text"><%= offer.description %></p>
-                <button type="button" class="btn btn-primary text-white"><%= link_to "Book experience", offer_path(offer) %></button>
-            </div>
-            </div>
-    <% end %>
-</div>
+  <div class="filter">
+  <p>Filtrez votre recherche :</p>
+  <br>
+  <br>
+  </div>
+    <div class="offers">
+        <% @offers.each do |offer| %>
+          <%= link_to(offer_path(offer)) do %>
+                <div class="offers-card">
+                <img src="<%= offer.photo_url%>" class="img-offers">
+                <div class="offers-card-body">
+                    <p class="category-font"><%= offer.category.upcase %></p>
+                    <h5><%= offer.title %></h5>
+                    <p class="duration"><i class="fa-regular fa-clock"></i>    <%= offer.duration.to_i %> heures</p>
+                    <p class="price"><%= offer.price_per_participant.to_i %>€ / par personne</p>
+               </div>
+               </div>
+           <% end %>
+        <% end %>
+    </div>
 
