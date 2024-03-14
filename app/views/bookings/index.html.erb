@@ -1,3 +1,28 @@
+<%# si j'ai au moins une expèrience alors je dois voir les réservations dessus %>
+<%# vérifier si le current user est dans la table offers %>
+<% if @offers.count > 0 %>
+  <h2>Voici vos demandes de réservations</h2>
+  <% @mybookings.each do |booking| %>
+    <div class="card-product">
+      <div>
+        <img src="<%= booking.offer.photo_url%>" />
+      </div>
+      <div class="card-product-infos">
+        <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+        <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+        <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
+      </div>
+      <div>
+        <% if booking.status == "pending" %>
+          <%= button_to "Accepter", accept_booking_path(booking), method: :patch %>
+          <%= button_to "Refuser", decline_booking_path(booking), method: :patch %>
+        <% end %>
+      </div>
+      </div>
+  <% end %>
+<% end %>
+
     <div>
         <div class="booking-container">
             <div>
@@ -10,10 +35,10 @@
                             <img src="<%= booking.offer.photo_url%>" />
                         </div>
                         <div class="card-product-infos">
-                            <h2><%= booking.offer.title %></h2>
+                            <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
                             <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
                             <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
-                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price %> </p>  
+                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
                         </div>
                     </div>
                 <% end %>
@@ -31,14 +56,13 @@
                             <img src="<%= booking.offer.photo_url%>" />
                         </div>
                         <div class="card-product-infos">
-                            <h2><%= booking.offer.title %></h2>
+                            <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
                             <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
                             <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
-                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>  
+                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
                         </div>
                     </div>
                 <% end %>
             </div>
         </div>
     </div>
- 

@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   resources :offers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :destroy]
+  resources :bookings, only: [:index, :destroy] do
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
 
   resources :offers do
     get 'category', on: :collection
@@ -25,10 +30,6 @@ Rails.application.routes.draw do
   # user story d'une grand-mère:
   namespace :grandma do
     resources :bookings, only: [:index] do
-      member do
-        patch :accept
-        patch :decline
-      end
     end
   end
 end
