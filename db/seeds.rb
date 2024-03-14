@@ -139,7 +139,7 @@ offer14 = Offer.create!(title: "Session de Valorant avec Mamie Pro",
                        address: "Berlin",
                        user_id: user14.id)
 
-user15 = User.create!(first_name: "Téa", last_name: "dszaczyne", phone_number: "+33749710103", password: "123456", email: "hnlzzie@example.com")
+user15 = User.create!(first_name: "Téa", last_name: "dszaczyne", phone_number: "+33749710103", password: "123456", email: "lalalae@example.com")
 
 offer15 = Offer.create!(title: "Session de Valorant avec Mamie Pro",
                        description:"Entrez dans le monde compétitif de Valorant avec Mamie Téa, passionnée du jeu prête à vous accompagner dans des sessions personnalisées de 1v1, de parties classées et de coaching. Que vous soyez novice cherchant à s'améliorer ou joueur chevronné visant la perfection stratégique, Mamie est là pour vous guider avec son expérience et sa passion pour le jeu. Avec elle, vous aurez l'opportunité de progresser, de vous amuser et de découvrir pourquoi Mamie est votre meilleure alliée sur le champ de bataille de Valorant. Réservez dès maintenant pour une expérience de jeu inoubliable et laissez Mamie vous montrer le chemin vers la victoire !",
