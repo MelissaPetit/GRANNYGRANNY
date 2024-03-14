@@ -1,5 +1,58 @@
-<% @bookings.each do |booking| %>
-  <p>Offre : <%= booking.offer.title %></p>
-  <p>Réservé par : <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-  <hr>
-<% end %>
+<div class="booking-container">
+  <h1>Demandes en attente de validation</h1>
+  <% @bookings.each do |booking| %>
+    <% if booking.status == "pending" %>
+      <div class="card-product w-">
+          <div>
+              <img src="<%= booking.offer.photo_url%>" />
+          </div>
+          <div class="card-product-infos">
+              <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+              <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+              <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+              <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
+          </div>
+          <div class="ms-auto p-2 bd-highlight align-self-center">                
+                  <%= button_to "Accepter", accept_booking_path(booking), class: "btn-accept", method: :patch %>
+                  <%= button_to "Refuser", decline_booking_path(booking), class: "btn-decline", method: :patch %>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="booking-container">
+  <h1>Demandes validées</h1>
+  <% @bookings.each do |booking| %>
+    <% if booking.status == "Accepté" %>
+      <div class="card-product w-">
+          <div>
+              <img src="<%= booking.offer.photo_url%>" />
+          </div>
+          <div class="card-product-infos">
+              <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+              <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+              <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+              <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="booking-container">
+  <h1>Demandes refusées</h1>
+  <% @bookings.each do |booking| %>
+    <% if booking.status == "Refusé" %>
+      <div class="card-product w-">
+          <div>
+              <img src="<%= booking.offer.photo_url%>" />
+          </div>
+          <div class="card-product-infos">
+              <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+              <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+              <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+              <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

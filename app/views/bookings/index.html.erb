@@ -1,11 +1,44 @@
 <%# si j'ai au moins une expèrience alors je dois voir les réservations dessus %>
 <%# vérifier si le current user est dans la table offers %>
-<% if @mybookings.count > 0 %>
     <div class="booking-container">
-        <h1>Demandes en attente de validation</h1>
-        <% @mybookings.each do |booking| %>
-            <% if booking.status == "pending" %>
-                <div class="card-product w-">
+        <div>
+            <h1>Réservations à venir</h1>
+        </div>
+        <% if (@upcoming_bookings.count == 0) %>
+            <p>Aucune réservation à venir</p>
+            <% end %>
+        <div class="booking-flex">
+            <% @upcoming_bookings.each do |booking| %>
+                <div class="card-product">
+                    <div>
+                        <img src="<%= booking.offer.photo_url%>" />
+                    </div>
+                    <div class="card-product-infos d-flex">
+                        <div>
+                        <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+                        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+                        <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+                        <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
+                        </div>
+                    </div>
+                    <div class="ms-auto mt-auto p-2 bd-highlight">
+                        <%= link_to (booking_path(booking)), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                        <i class="fa-regular fa-trash-can me-2"></i>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <br>
+    <div class="booking-container">
+        <% if (@past_bookings.count > 0) %>
+        <div>
+            <h1>Réservations passées</h1>
+        </div>
+        <div class="booking-flex">
+            <% @past_bookings.each do |booking| %>
+                <div class="card-product">
                     <div>
                         <img src="<%= booking.offer.photo_url%>" />
                     </div>
@@ -15,69 +48,9 @@
                         <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
                         <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
                     </div>
-                    <div class="ms-auto p-2 bd-highlight align-self-center">                
-                        <% if booking.status == "pending" %>
-                            <%= button_to "Accepter", accept_booking_path(booking), class: "btn-accept", method: :patch %>
-                            <%= button_to "Refuser", decline_booking_path(booking), class: "btn-decline", method: :patch %>
-                        <% end %>
-                    </div>
                 </div>
             <% end %>
+        </div>
         <% end %>
-    </div>
-<% end %>
-        <div class="booking-container">
-            <div>
-                <h1>Réservations à venir</h1>
-            </div>
-            <% if (@upcoming_bookings.count == 0) %>
-                <p>Aucune réservation à venir</p>
-                <% end %>
-            <div class="booking-flex">
-                <% @upcoming_bookings.each do |booking| %>
-                    <div class="card-product">
-                        <div>
-                            <img src="<%= booking.offer.photo_url%>" />
-                        </div>
-                        <div class="card-product-infos d-flex">
-                            <div>
-                            <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
-                            <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
-                            <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
-                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
-                            </div>
-                        </div>
-                        <div class="ms-auto mt-auto p-2 bd-highlight">
-                            <%= link_to (booking_path(booking)), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                            <i class="fa-regular fa-trash-can me-2"></i>
-                            <% end %>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-        </div>
-        <br>
-        <div class="booking-container">
-            <% if (@past_bookings.count > 0) %>
-            <div>
-                <h1>Réservations passées</h1>
-            </div>
-            <div class="booking-flex">
-                <% @past_bookings.each do |booking| %>
-                    <div class="card-product">
-                        <div>
-                            <img src="<%= booking.offer.photo_url%>" />
-                        </div>
-                        <div class="card-product-infos">
-                            <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
-                            <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
-                            <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
-                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-            <% end %>
-        </div>
     </div>
 
