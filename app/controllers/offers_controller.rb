@@ -5,6 +5,9 @@ class OffersController < ApplicationController
       sql_subquery = "title ILIKE :query OR description ILIKE :query"
       @offers = @offers.where(sql_subquery, query: "%#{params[:query]}%")
     end
+    if params[:address].present?
+      @offers = @offers.where("address ILIKE ?", "%#{params[:address]}%")
+    end
   end
 
     def show
