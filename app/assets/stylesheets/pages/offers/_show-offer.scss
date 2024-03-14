@@ -10,6 +10,11 @@
 
 .offer-description {
   font-weight: 300;
+
+}
+
+.offer-description p {
+  margin-top: 15px;
 }
 
 .description-container {
@@ -18,6 +23,10 @@
   border-radius: 20px;
   width: 85%;
   margin: auto;
+}
+
+.description-container p {
+  padding-top: 10px
 }
 
 .offers-category {
@@ -33,6 +42,7 @@
 
 .list-details p {
   margin-bottom: 0px;
+  margin-right: 20px
 }
 
 .list-description {
