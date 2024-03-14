@@ -4,6 +4,8 @@ class OffersController < ApplicationController
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR description ILIKE :query"
       @offers = @offers.where(sql_subquery, query: "%#{params[:query]}%")
+    elsif params[:category].present?
+      @offers = Offer.where(category: params[:category])
     end
     if params[:address].present?
       @offers = @offers.where("address ILIKE ?", "%#{params[:address]}%")
