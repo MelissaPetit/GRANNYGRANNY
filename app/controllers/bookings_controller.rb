@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
   def index
     # Lister toutes les réservations, et les récupérer dans l'instance @bookings
     @bookings = Booking.where(user: current_user)
+    @offers = Offer.where(user: current_user)
+    @mybookings = Booking.where(offer_id: @offers)
     @upcoming_bookings = @bookings.where('date > ?', DateTime.now)
     @past_bookings = @bookings.where('date <= ?', DateTime.now)
   end
@@ -36,6 +38,21 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepté"
+    @booking.save
+    redirect_to bookings_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "Refusé"
+    @booking.save
+    redirect_to bookings_path
+  end
+
+
   private
 
   def booking_params
@@ -49,5 +66,3 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 end
-
-      

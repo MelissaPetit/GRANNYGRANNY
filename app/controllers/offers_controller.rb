@@ -10,11 +10,12 @@ class OffersController < ApplicationController
     end
   end
 
-    def show
-        @offer = Offer.find(params[:id])
-        @booking = Booking.new
+  def show
+    @offer = Offer.find(params[:id])
+    @booking = Booking.new
+  end
 
-    end
-
+  # def dates_to_disable
+  #  @dates_to_disable = @old.pluck(:date_from)
+  # end
 end
-
