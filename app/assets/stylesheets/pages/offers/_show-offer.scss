@@ -14,11 +14,37 @@
 
 .description-container {
   background-color: #FAF6F0;
-  padding: 20px;
+  padding: 35px;
   border-radius: 20px;
+  width: 85%;
+  margin: auto;
 }
 
 .offers-category {
   color: #F99A85;
   font-weight: 300;
+  margin-left: 85px;
+}
+
+.list-details {
+  font-weight: 300;
+  padding-right: 20px;
+}
+
+.list-details p {
+  margin-bottom: 0px;
+}
+
+.list-description {
+  padding-left: 0rem;
+  margin-bottom: 0px;
+}
+
+h5 {
+  margin-bottom: 13px;
+}
+
+.offer-title {
+  margin-left: 85px;
+  margin-top: 30px;
 }
