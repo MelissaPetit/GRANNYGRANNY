@@ -37,8 +37,8 @@ offer2 = Offer.create!(title: "Viens faire des roues arrière avec Thérèse",
 
 user3 = User.create!(first_name: "Marie", last_name: "Jeanne", phone_number: "+33749710103", password: "123456", email: "user3@grandma.com")
 
-offer3 = Offer.create!(title: "En immersion dans la fameuse et unique Castellane, rejoignez-moi, l'unique Marie Jeanne, pour déguster les saveurs de nos herbes locales. Je vous propose une expérience unique en circuit court qui valorise les producteurs locaux ! De la cueillette aux fourneaux, venez découvrir mes célèbres recettes qui vous détendront bien plus qu'une session de yoga !",
-                       description:"As-tu déjà goûté des space cake au CBD ? Mamy réalise les meilleurs de France",
+offer3 = Offer.create!(title: "As-tu déjà goûté des space cake au CBD ? Mamy réalise les meilleurs de France",
+                       description:"En immersion dans la fameuse et unique Castellane, rejoignez-moi, l'unique Marie Jeanne, pour déguster les saveurs de nos herbes locales. Je vous propose une expérience unique en circuit court qui valorise les producteurs locaux ! De la cueillette aux fourneaux, venez découvrir mes célèbres recettes qui vous détendront bien plus qu'une session de yoga !",
                        start_from: Date.today,
                        price_per_participant:"100",
                        photo_url:"https://www.newsweed.fr/wp-content/uploads/2017/07/Combien-de-temps-peut-on-e%CC%82tre-stone-apre%CC%80s-avoir-consomme%CC%81-des-22edibles22-.jpg",
@@ -89,8 +89,8 @@ offer9 = Offer.create!(title: "Atelier de cuisine sauvage avec Mamie Lucienne",
 
 user10 = User.create!(first_name: "Henriette", last_name: "Saveurix", phone_number: "+33749710103", password: "123456", email: "nriette@example.com")
 
-offer10 = Offer.create!(title: "Connaissez-vous Obélix et Astérix ? Venez revivre les aventures du village gaulois en subissant les hurlements d'Ordralfabétix, le célèbre poissonnier du village ! Laissez-vous servir une bière par la fameuse Falbala dans une véritable immersion dans le marché gaulois. C'est une bande dessinée en vrai que je vous propose, alors qu'attendez-vous pour venir défier Obélix au lancer de menhir ?",
-                       description:"Découvrez les saveurs authentiques de la région lors d'une visite du marché avec Mamie Henriette",
+offer10 = Offer.create!(title: "Découvrez les saveurs authentiques de la région lors d'une visite du marché avec Mamie Henriette",
+                       description:"Connaissez-vous Obélix et Astérix ? Venez revivre les aventures du village gaulois en subissant les hurlements d'Ordralfabétix, le célèbre poissonnier du village ! Laissez-vous servir une bière par la fameuse Falbala dans une véritable immersion dans le marché gaulois. C'est une bande dessinée en vrai que je vous propose, alors qu'attendez-vous pour venir défier Obélix au lancer de menhir ?",
                        start_from: Date.today,
                        price_per_participant:"15",
                        photo_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3uTceM0qHcsLHZ0tKoKazLfR9NL4yk2RbZxJBVSbpsa39ripxjL4HEVB8BDqxFC6WmF8&usqp=CAU",
@@ -119,7 +119,7 @@ offer13 = Offer.create!(title: "Soirées Techn de Berlin avec DJ Rita Simba",
                        description:"Plongez dans l'atmosphère enivrante des soirées sombres de Berlin avec DJ Rita Simba, une légende vivante qui fait vibrer les jeunes avec sa sélection de drum & bass et de musique au BPM élevé. Malgré son âge, Rita continue à enflammer les dancefloors et à faire taper du pied aux foules avec son énergie débordante et sa passion pour la musique électronique. Rejoignez-la pour une expérience unique où les rythmes intenses et les vibes underground vous transporteront dans les nuits électriques de la capitale allemande. Réservez maintenant et préparez-vous à une nuit inoubliable sous les étoiles de Berlin !",
                        start_from: Date.today,
                        price_per_participant:"80",
-                       photo_url:"https://www.netcost-security.fr/wp-content/uploads/2022/09/1663929726_Comment-serait-Lady-Diana-aujourdhui-Lintelligence-artificielle-qui-vieillit-758x512.jpg",
+                       photo_url:"https://img.freepik.com/photos-premium/femme-agee-brillante-dj-lors-soiree-rave-techno-dans-club-grandma-dj-ai_126267-12789.jpg",
                        capacity: "1",
                        duration:"3",
                        category: "Insolite",
