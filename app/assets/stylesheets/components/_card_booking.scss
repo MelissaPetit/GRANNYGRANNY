@@ -5,6 +5,7 @@
 .booking-flex {
   display: block;
 }
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -39,4 +40,26 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.fa-trash-can {
+  color: #F99A85;
+  font-size: 20px;
+}
+
+.btn-accept {
+  background-color: green;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-decline {
+  background-color: #F99A85;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
 }
