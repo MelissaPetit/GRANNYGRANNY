@@ -1,7 +1,9 @@
 <div class="booking-container">
   <h1>Demandes en attente de validation</h1>
-  <% @bookings.each do |booking| %>
-    <% if booking.status == "pending" %>
+    <% if (@myPendingBookings.count == 0) %>
+      <p>Aucune demande en attente</p>
+    <% end %>
+  <% @myPendingBookings.each do |booking| %>
       <div class="card-product w-">
           <div>
               <img src="<%= booking.offer.photo_url%>" />
@@ -17,13 +19,14 @@
                   <%= button_to "Refuser", decline_booking_path(booking), class: "btn-decline", method: :patch %>
           </div>
       </div>
-    <% end %>
   <% end %>
 </div>
 <div class="booking-container">
   <h1>Demandes validées</h1>
-  <% @bookings.each do |booking| %>
-    <% if booking.status == "Accepté" %>
+    <% if (@myAcceptedBookings.count == 0) %>
+      <p>Aucune demande validée</p>
+    <% end %>
+  <% @myAcceptedBookings.each do |booking| %>
       <div class="card-product w-">
           <div>
               <img src="<%= booking.offer.photo_url%>" />
@@ -35,13 +38,14 @@
               <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
           </div>
       </div>
-    <% end %>
   <% end %>
 </div>
 <div class="booking-container">
   <h1>Demandes refusées</h1>
-  <% @bookings.each do |booking| %>
-    <% if booking.status == "Refusé" %>
+    <% if (@myDeclinedBookings.count == 0) %>
+      <p>Aucune demande refusée</p>
+    <% end %>
+  <% @myDeclinedBookings.each do |booking| %>
       <div class="card-product w-">
           <div>
               <img src="<%= booking.offer.photo_url%>" />
@@ -53,6 +57,5 @@
               <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
           </div>
       </div>
-    <% end %>
   <% end %>
 </div>
