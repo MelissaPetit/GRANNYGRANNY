@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   # user story d'une grand-mère:
   namespace :grandma do
-    resources :bookings, only: [:index] do
-    end
+    resources :bookings, only: [:index]
+    resources :offers, only: [:index]
   end
 end

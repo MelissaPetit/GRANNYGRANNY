@@ -1,0 +1,5 @@
+<% @bookings.each do |booking| %>
+  <p>Offre : <%= booking.offer.title %></p>
+  <p>Réservé par : <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+  <hr>
+<% end %>
