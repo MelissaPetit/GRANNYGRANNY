@@ -5,6 +5,11 @@
     <div class="image-offer">
         <%= image_tag (@offer.photo_url), class: "rounded-4" %>
     </div>
+    <div class="mosaic">
+        <% @offer.photos.each do |photo| %>
+            <%= image_tag(photo.image_url, class: "rounded-4") %>
+        <% end %>
+    </div>
     <div class="description-container">
         <div>
             <h5 class="description">Description :</h5>

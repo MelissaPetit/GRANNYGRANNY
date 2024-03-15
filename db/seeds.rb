@@ -47,7 +47,8 @@ offer3 = Offer.create!(title: "As-tu déjà goûté des space cake au CBD ? Mamy
                        category: "Cuisine",
                        address: "Marseille",
                        user_id: user3.id)
-
+Photo.create(image_url:"https://www.newsweed.fr/wp-content/uploads/2017/07/Combien-de-temps-peut-on-e%CC%82tre-stone-apre%CC%80s-avoir-consomme%CC%81-des-22edibles22-.jpg",offer_id:offer3.id)
+Photo.create(image_url:"https://www.newsweed.fr/wp-content/uploads/2017/07/Combien-de-temps-peut-on-e%CC%82tre-stone-apre%CC%80s-avoir-consomme%CC%81-des-22edibles22-.jpg",offer_id:offer3.id)
 user16 = User.create!(first_name: "Gisèle", last_name: "Farce", phone_number: "+33749710103", password: "123456", email: "gisèle@example.com")
 
 offer16 = Offer.create!(title: "Cours de jonglage avec Mamie Gisèle",
@@ -139,16 +140,16 @@ offer14 = Offer.create!(title: "Session de Valorant avec Mamie Pro",
                        address: "Berlin",
                        user_id: user14.id)
 
-user15 = User.create!(first_name: "Téa", last_name: "dszaczyne", phone_number: "+33749710103", password: "123456", email: "lalalae@example.com")
+user15 = User.create!(first_name: "Marie", last_name: "Poppins", phone_number: "+33749710103", password: "123456", email: "lealae@example.com")
 
-offer15 = Offer.create!(title: "Session de Valorant avec Mamie Pro",
-                       description:"Entrez dans le monde compétitif de Valorant avec Mamie Téa, passionnée du jeu prête à vous accompagner dans des sessions personnalisées de 1v1, de parties classées et de coaching. Que vous soyez novice cherchant à s'améliorer ou joueur chevronné visant la perfection stratégique, Mamie est là pour vous guider avec son expérience et sa passion pour le jeu. Avec elle, vous aurez l'opportunité de progresser, de vous amuser et de découvrir pourquoi Mamie est votre meilleure alliée sur le champ de bataille de Valorant. Réservez dès maintenant pour une expérience de jeu inoubliable et laissez Mamie vous montrer le chemin vers la victoire !",
+offer15 = Offer.create!(title: "Participez à la célèbre course de fromage Cooper Hill's avec Marie Poppins",
+                       description:"Accrochez-vous bien ! Marie Poppins vous invite à participer à l'une des courses les plus folles et emblématiques au monde : la course de fromage Cooper Hill's en Angleterre. Rejoignez Marie pour une aventure palpitante où vous dévalerez une colline abrupte en poursuivant un fromage lancé à toute vitesse ! Vivez l'excitation, l'adrénaline et les fous rires dans cette expérience unique où la tradition et la folie se rencontrent. Que vous soyez un amateur de sensations fortes ou un adepte de l'extravagance, cette course est faite pour vous ! Réservez dès maintenant et préparez-vous à vivre un moment inoubliable avec Marie Poppins.",
                        start_from: Date.today,
-                       price_per_participant:"60",
-                       photo_url:"https://i.ytimg.com/vi/uPQIuZ6tU0g/sddefault.jpg",
-                       capacity: "5",
-                       duration:"5",
-                       category: "Insolite",
+                       price_per_participant:"75",
+                       photo_url:"https://i.dailymail.co.uk/i/pix/2013/05/24/article-2329519-19F40B6A000005DC-702_634x601.jpg",
+                       capacity: "10",
+                       duration:"3",
+                       category: "Tradition",
                        address: "Berlin",
                        user_id: user15.id)
 
@@ -174,6 +175,6 @@ offer19 = Offer.create!(title: "Cours de création de potions avec le Professeur
                        photo_url:"https://images.rtl.fr/~c/2000v2000/rtl/www/1329511-minerva-mcgonagall-maggie-smith.jpg",
                        capacity: "4",
                        duration:"2",
-                       category: "Insolite",
+                       category: "Tradition",
                        address: "Poudlard",
                        user_id: user19.id)
