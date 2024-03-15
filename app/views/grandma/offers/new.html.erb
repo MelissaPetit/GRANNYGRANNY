@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="mt-3">
+    <h2>Tu es une <em>GRANNY</em> ? Remplis le formulaire pour créer <strong>ton expérience</strong> !</h2>
+  </div>
+<%= simple_form_for @offer do |f| %>
+  <%= f.label :title, 'Titre' %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description, 'Description' %>
+  <%= f.text_area :description %>
+
+  <%= f.label :start_from, 'Date' %>
+  <%= f.input :start_from, as: :string,
+  input_html: { data: { controller: "flatpickr"} } %>
+
+  <%= f.label :price_per_participant, 'Prix par participant' %>
+  <%= f.input :price_per_participant %>
+
+  <%= f.label :duration, 'Durée' %>
+  <%= f.input :duration %>
+
+  <%= f.input :category, collection: Offer::CATEGORY, prompt: "Choisissez une catégorie" %>
+
+  <%= f.label :address, 'Adresse' %>
+  <%= f.input :address %>
+
+  <%= f.label :capacity, 'Nombre de participant maximum' %>
+  <%= f.input :capacity %>
+
+  <%= f.submit 'Créer l\'offre' %>
+<% end %>
+</div>
