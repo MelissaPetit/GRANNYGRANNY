@@ -1,7 +1,6 @@
-<%# si j'ai au moins une expèrience alors je dois voir les réservations dessus %>
-<%# vérifier si le current user est dans la table offers %>
+
     <div class="booking-container">
-        <div>
+        <div class="booking-title">
             <h1>Réservations à venir</h1>
         </div>
         <% if (@upcoming_bookings.count == 0) %>
@@ -31,9 +30,9 @@
         </div>
     </div>
     <br>
-    <div class="booking-container">
+    <div class="row booking-container">
         <% if (@past_bookings.count > 0) %>
-        <div>
+        <div class="booking-title">
             <h1>Réservations passées</h1>
         </div>
         <div class="booking-flex">

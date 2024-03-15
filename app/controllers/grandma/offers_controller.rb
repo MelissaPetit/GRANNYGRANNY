@@ -6,4 +6,23 @@ class Grandma::OffersController < ApplicationController
     @myAcceptedBookings = @mybookings.where(status: "Accepté")
     @myDeclinedBookings = @mybookings.where(status: "Refusé")
   end
+
+  def new
+    @offer = Offer.new
+  end
+
+  def create
+    @offer = Offer.new(offer_params)
+    if @offer.save
+      redirect_to @offer, notice: 'L\'offre a été créée avec succès.'
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def offer_params
+    params.require(:offer).permit(:title, :description, :start_from, :price_per_participant, :photo_url, :duration, :category, :address, :capacity)
+  end
 end
