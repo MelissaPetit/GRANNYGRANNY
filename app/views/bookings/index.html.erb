@@ -15,11 +15,11 @@
                     <div class="card-product-infos d-flex">
                         <div>
                         <% if booking.status == "En attente" %>
-                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-warning"><%= booking.status.capitalize %></span></h2>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill opacity-75 text-white text-bg-warning"><%= booking.status.capitalize %></span></h2>
                         <% elsif booking.status == "Accepté"  %>
-                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-success"><%= booking.status.capitalize %></span></h2>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill opacity-75 text-white text-bg-success"><%= booking.status.capitalize %></span></h2>
                         <% else  %>
-                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-danger"><%= booking.status.capitalize %></span></h2>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill opacity-75 text-white text-bg-danger"><%= booking.status.capitalize %></span></h2>
                         <% end %>            
                         <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
                         <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
@@ -49,11 +49,11 @@
                     </div>
                     <div class="card-product-infos">
                         <% if booking.status == "En attente" %>
-                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-warning"><%= booking.status.capitalize %></span></h2>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill opacity-75 text-white text-bg-warning"><%= booking.status.capitalize %></span></h2>
                         <% elsif booking.status == "Accepté"  %>
-                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-success"><%= booking.status.capitalize %></span></h2>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill opacity-75 text-white text-bg-success"><%= booking.status.capitalize %></span></h2>
                         <% else  %>
-                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-danger"><%= booking.status.capitalize %></span></h2>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill opacity-75 text-white text-bg-danger"><%= booking.status.capitalize %></span></h2>
                         <% end %>                        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
                         <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
                         <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
