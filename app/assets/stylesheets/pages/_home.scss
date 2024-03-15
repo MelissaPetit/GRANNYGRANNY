@@ -5,9 +5,21 @@
   width: 85%;
   padding: 0 30px;
   text-align: center;
-  margin: auto;
+  margin: 30px auto;
 }
 
 .bottom h1 {
   margin: 40px;
+}
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
 }

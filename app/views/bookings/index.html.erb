@@ -1,44 +1,55 @@
-    <div>
-        <div class="booking-container">
-            <div>
-                <h1>Réservations à venir</h1>
-            </div>
-            <div class="booking-flex">
-                <% @upcoming_bookings.each do |booking| %>
-                    <div class="card-product">
-                        <div>
-                            <img src="<%= booking.offer.photo_url%>" />
-                        </div>
-                        <div class="card-product-infos">
-                            <h2><%= booking.offer.title %></h2>
-                            <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
-                            <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
-                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price %> </p>  
-                        </div>
-                    </div>
-                <% end %>
-            </div>
+
+    <div class="booking-container">
+        <div class="booking-title">
+            <h1>Réservations à venir</h1>
         </div>
-        <br>
-        <div class="booking-container">
-            <div>
-                <h1>Réservations passées</h1>
-            </div>
-            <div class="booking-flex">
-                <% @past_bookings.each do |booking| %>
-                    <div class="card-product">
+        <% if (@upcoming_bookings.count == 0) %>
+            <p>Aucune réservation à venir</p>
+            <% end %>
+        <div class="booking-flex">
+            <% @upcoming_bookings.each do |booking| %>
+                <div class="card-product">
+                    <div>
+                        <img src="<%= booking.offer.photo_url%>" />
+                    </div>
+                    <div class="card-product-infos d-flex">
                         <div>
-                            <img src="<%= booking.offer.photo_url%>" />
-                        </div>
-                        <div class="card-product-infos">
-                            <h2><%= booking.offer.title %></h2>
-                            <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
-                            <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
-                            <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>  
+                        <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+                        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+                        <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+                        <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
                         </div>
                     </div>
-                <% end %>
-            </div>
+                    <div class="ms-auto mt-auto p-2 bd-highlight">
+                        <%= link_to (booking_path(booking)), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                        <i class="fa-regular fa-trash-can me-2"></i>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
         </div>
     </div>
- 
+    <br>
+    <div class="row booking-container">
+        <% if (@past_bookings.count > 0) %>
+        <div class="booking-title">
+            <h1>Réservations passées</h1>
+        </div>
+        <div class="booking-flex">
+            <% @past_bookings.each do |booking| %>
+                <div class="card-product">
+                    <div>
+                        <img src="<%= booking.offer.photo_url%>" />
+                    </div>
+                    <div class="card-product-infos">
+                        <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+                        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+                        <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
+                        <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+
