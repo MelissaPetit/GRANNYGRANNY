@@ -46,12 +46,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_094659) do
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.string "image_url"
-    t.bigint "offer_id"
+  create_table "tests", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["offer_id"], name: "index_photos_on_offer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,5 +70,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_094659) do
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
   add_foreign_key "offers", "users"
-  add_foreign_key "photos", "offers"
 end
