@@ -11,8 +11,8 @@
           <div>
               <img src="<%= booking.offer.photo_url%>" />
           </div>
-          <div class="card-product-infos">
-              <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+          <div class="card-product-infos">  
+              <h5>Réservation effectuée par <%= booking.user.first_name %> <%= booking.user.last_name%></h5>   
               <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
               <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
               <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
@@ -39,7 +39,7 @@
               <img src="<%= booking.offer.photo_url%>" />
           </div>
           <div class="card-product-infos">
-              <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+              <h5>Réservation effectuée par <%= booking.user.first_name %> <%= booking.user.last_name%></h5>
               <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
               <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
               <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
@@ -62,7 +62,7 @@
               <img src="<%= booking.offer.photo_url%>" />
           </div>
           <div class="card-product-infos">
-              <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+              <h5>Réservation effectuée par <%= booking.user.first_name %> <%= booking.user.last_name%></h5>
               <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
               <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
               <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>

@@ -14,7 +14,13 @@
                     </div>
                     <div class="card-product-infos d-flex">
                         <div>
-                        <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
+                        <% if booking.status == "En attente" %>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-warning"><%= booking.status.capitalize %></span></h2>
+                        <% elsif booking.status == "Accepté"  %>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-success"><%= booking.status.capitalize %></span></h2>
+                        <% else  %>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-danger"><%= booking.status.capitalize %></span></h2>
+                        <% end %>            
                         <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
                         <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
                         <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
@@ -42,8 +48,13 @@
                         <img src="<%= booking.offer.photo_url%>" />
                     </div>
                     <div class="card-product-infos">
-                        <h2><%= booking.offer.title %><span class="badge text-bg-primary"><%= booking.status.capitalize %></span></h2>
-                        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
+                        <% if booking.status == "En attente" %>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-warning"><%= booking.status.capitalize %></span></h2>
+                        <% elsif booking.status == "Accepté"  %>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-success"><%= booking.status.capitalize %></span></h2>
+                        <% else  %>
+                            <h2><%= booking.offer.title %><span class="badge rounded-pill text-white text-bg-danger"><%= booking.status.capitalize %></span></h2>
+                        <% end %>                        <p><i class="fa-solid fa-users"></i> <%= booking.participant_number %> personnes</p>
                         <p><i class="fa-regular fa-calendar"></i> <%= booking.date %> </p>
                         <p><i class="fa-regular fa-money-bill-1"></i> <%= booking.total_price.to_i %>  €</p>
                     </div>
