@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2024_03_15_094659) do
+=======
+ActiveRecord::Schema[7.1].define(version: 2024_03_14_164247) do
+>>>>>>> 3f04b17ee6e9ba98bd64563d1fa6b7932889813d
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_094659) do
     t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
     t.date "date"
-    t.string "status", default: "pending"
+    t.string "status", default: "En attente"
     t.integer "participant_number"
     t.string "comment"
     t.float "total_price"

@@ -1,6 +1,6 @@
 <div class="trait"></div>
 <div class="container">
-    <h3><%= @offer.title %></h3>
+    <h3 class="offer-title"><%= @offer.title %></h3>
     <p class="offers-category"><%= @offer.category.upcase %></p>
     <div class="image-offer">
         <div id="carouselExampleControls" class="carousel slide text-center" data-ride="carousel">
@@ -27,9 +27,10 @@
     </div>
     <div class="description-container">
         <div>
-            <h5 class="description">Description :</h5>
+            <h4 class="description">Au programme</h4>
             <p class="offer-description"><%= @offer.description %></p>
         </div>
+<<<<<<< HEAD
         <div>
             <p><i class="fa-solid fa-users"></i> <%= @offer.capacity %> persons</p>
         </div>
@@ -39,9 +40,18 @@
         <div>
             <p><i class="fa-solid fa-location-dot"></i> <%= @offer.address %></p>
         </div>
+=======
+        <hr>
+        <h4 class="description">Détail</h4>
+              <ul class="list-description" style="list-style-type:none;display: flex;">
+                <li class="list-details"><p><i class="fa-solid fa-users"></i> <%= @offer.capacity %> personne(s)</p></li>
+                <li class="list-details"><p><i class="fa-regular fa-clock"></i> <%= @offer.duration.to_i%>h</p></li>
+                <li class="list-details"><p><i class="fa-solid fa-location-dot"></i> <%= @offer.address %></p></li>
+              </ul>
+>>>>>>> 3f04b17ee6e9ba98bd64563d1fa6b7932889813d
     </div>
 </div>
 <br>
 <div>
-    <%= render "bookings/form" %>
+    <%= render "shared/form" %>
 </div>

@@ -1,9 +1,10 @@
 .banner {
   background-color: #F99A85;
   border-radius: 20px;
-  width: 85%;
-  height: 400px;
+  width: 75%;
+  height: 350px;
   margin: auto;
+  margin-top: 11px;
   padding: 30px;
   display: flex;
   justify-content: space-around;
@@ -15,6 +16,7 @@
 
 .text p {
   font-weight: 300;
+  font-size: 16px;
 }
 
 .text {
@@ -25,7 +27,7 @@
 
 .form {
   width: 50vh;
-  background-color: #FAF6F0;
+  background-color: #fbf8f3;
   border-radius: 20px;
   margin-left: 10px;
 }
