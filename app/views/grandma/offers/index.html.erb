@@ -1,5 +1,5 @@
 <div class="booking-container">
-  <div class="booking-title">
+  <div class="booking-flex">
     <h1>Demandes en attente de validation</h1>
     <% if (@myPendingBookings.count == 0) %>
       <p>Aucune demande en attente</p>
@@ -26,10 +26,10 @@
   </div>
 </div>
 <div class="booking-container">
-  <div class="booking-title">
+  <div class="booking-flex">
     <h1>Demandes validées</h1>
     <% if (@myAcceptedBookings.count == 0) %>
-      <p class="booking-title">Aucune demande validée</p>
+      <p>Aucune demande validée</p>
     <% end %>
   </div>
   <div class="booking-flex">
@@ -49,7 +49,7 @@
   </div>
 </div>
 <div class="booking-container">
-  <div class="booking-title">
+  <div class="booking-flex">
   <h1>Demandes refusées</h1>
     <% if (@myDeclinedBookings.count == 0) %>
       <p >Aucune demande refusée</p>
