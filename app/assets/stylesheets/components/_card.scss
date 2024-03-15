@@ -6,7 +6,7 @@
 }
 .category-card {
   overflow: hidden;
-  background: #FAF6F0;
+  background: #fbf8f3;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 20px;
   padding: 0;
@@ -20,6 +20,8 @@
 
 .category-card p {
   font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .img-category {
@@ -37,7 +39,7 @@
 
 .offers-card {
   overflow: hidden;
-  background: #FAF6F0;
+  background: #fbf8f3;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 20px;
   padding: 0;
