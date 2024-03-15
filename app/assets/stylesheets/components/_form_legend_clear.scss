@@ -38,3 +38,86 @@ legend ~ div.form-check:first-of-type {
   margin: 5px 0px;
   padding: 5px 24px;
 }
+
+.booking-form {
+  width: 70%;
+  margin: auto;
+}
+
+.booking-input {
+  display: inline-flex;
+  height: 45px;
+}
+.booking-comment {
+  display: inline-flex;
+}
+
+.booking-form .form-label {
+  flex: none;
+  margin-left: 10px;
+}
+
+.booking-form .form-control {
+display: flex;
+}
+
+.booking-form .string.required {
+  display: inline-flex;
+  align-items: baseline;
+  width: 50px;
+}
+
+.booking-form .integer.required {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.booking-booking {
+  width: 80%;
+  margin: 30px auto;
+  background-color: #fbf8f3;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.booking-form .booking-line {
+  background-color: white;
+  width: 42%;
+  border: solid #daccb8;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 10px;
+  border-width: thin;
+  margin-bottom: 20px;
+}
+
+#booking_date {
+  width: 175px;
+}
+#booking_participant_number {
+  width: 90px;
+}
+
+.booking-form .booking-comment {
+  background-color: white;
+  width: 100%;
+  border: solid #daccb8;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 10px;
+  border-width: thin;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+
+.booking-comment .string.optionnal {
+  align-items: baseline;
+}
+#booking_comment {
+  width: 500px;
+  height: 85px;
+}
+
+.submit-btn {
+  background-color: violet;
+}
