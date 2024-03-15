@@ -2,14 +2,14 @@
   <div class="mt-3">
     <h2>Tu es une <em>GRANNY</em> ? Remplis le formulaire pour créer <strong>ton expérience</strong> !</h2>
   </div>
-<%= simple_form_for @offer do |f| %>
+<%= simple_form_for @offer, url: grandma_offers_path do |f| %>
   <%= f.label :title, 'Titre' %>
   <%= f.text_field :title %>
 
   <%= f.label :description, 'Description' %>
-  <%= f.text_area :description %>
+  <%= f.text_field :description %>
 
-  <%= f.label :start_from, 'Date' %>
+  <%= f.label :start_from, 'Débute le' %>
   <%= f.input :start_from, as: :string,
   input_html: { data: { controller: "flatpickr"} } %>
 
@@ -26,6 +26,22 @@
 
   <%= f.label :capacity, 'Nombre de participant maximum' %>
   <%= f.input :capacity %>
+
+  <%= f.label :photo_url, 'Choisissez une image' %>
+  <%= f.input :photo_url, as: :select, collection: ['amigurumi.jpg'], input_html: { id: 'image-select' } %>
+<img id="preview" src="" style="display: none;">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('image-select').addEventListener('change', function() {
+    var imageUrl = this.value;
+    var preview = document.getElementById('preview');
+    preview.src = '/assets/' + imageUrl;
+    preview.style.display = 'block';
+  });
+});
+</script>
+  <%#= image_tag(@offer.photo_url) if @offer.photo_url.present? %>
 
   <%= f.submit 'Créer l\'offre' %>
 <% end %>

@@ -13,8 +13,9 @@ class Grandma::OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.user = current_user
     if @offer.save
-      redirect_to @offer, notice: 'L\'offre a été créée avec succès.'
+      redirect_to grandma_offers_path, notice: 'L\'offre a été créée avec succès.'
     else
       render :new
     end
