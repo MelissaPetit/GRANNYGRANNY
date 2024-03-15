@@ -102,7 +102,7 @@ offer9 = Offer.create!(title: "Atelier de cuisine sauvage avec Mamie Lucienne",
 
 user10 = User.create!(first_name: "Henriette", last_name: "Saveurix", phone_number: "+33749710103", password: "123456", email: "nriette@example.com")
 
-offer10 = Offer.create!(title: "Découvrez les saveurs authentiques de la région lors d'une visite du marché avec Mamie Henriette",
+offer10 = Offer.create!(title: "Découvrez des saveurs authentiques lors d'une visite du marché avec Henriette",
                        description:"Connaissez-vous Obélix et Astérix ? Venez revivre les aventures du village gaulois en subissant les hurlements d'Ordralfabétix, le célèbre poissonnier du village ! Laissez-vous servir une bière par la fameuse Falbala dans une véritable immersion dans le marché gaulois. C'est une bande dessinée en vrai que je vous propose, alors qu'attendez-vous pour venir défier Obélix au lancer de menhir ?",
                        start_from: Date.today,
                        price_per_participant:"15",
